@@ -22,8 +22,9 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
-# class PostTag(models.Model):
-#     title = models.CharField(max_length=45)
-#
-#     def __str__(self):
-#         return self.title
+class PostTag(models.Model):
+    post = models.ForeignKey(Post, on_delete=models.CASCADE) 
+    tag = models.CharField(max_length=45)
+
+    def __str__(self):
+        return self.title
