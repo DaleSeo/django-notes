@@ -23,7 +23,7 @@ CREATE TABLE IF NOT EXISTS `post_tag` (
   `postNo` int(11) NOT NULL,
   `tag` varchar(45) NOT NULL,
   PRIMARY KEY (`postNo`,`tag`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+);
 
 --
 -- 테이블의 덤프 데이터 `post_tag`

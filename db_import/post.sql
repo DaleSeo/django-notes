@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `post` (
   `hit` int(11) NOT NULL DEFAULT '0',
   `secret` tinyint(1) NOT NULL DEFAULT '0',
   PRIMARY KEY (`postNo`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+);
 
 --
 -- 테이블의 덤프 데이터 `post`
