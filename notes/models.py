@@ -23,7 +23,7 @@ class Post(models.Model):
         return self.title
 
 class PostTag(models.Model):
-    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, related_name='tags', on_delete=models.CASCADE)
     tag = models.CharField(max_length=45)
 
     def __str__(self):

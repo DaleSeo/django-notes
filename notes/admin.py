@@ -13,7 +13,7 @@ class TagInline(admin.TabularInline):
 class PostAdmin(admin.ModelAdmin):
     inlines = [TagInline]
     list_display = ('title', 'date', 'user')
-    list_filter = ['date']
+    list_filter = ['date', 'tags']
     search_fields = ['title', 'content']
 
 admin.site.register(Note, NoteAdmin)
