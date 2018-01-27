@@ -1,7 +1,7 @@
 from django.db import models
 
 class Tag(models.Model):
-    title = models.CharField(max_length=45)
+    title = models.CharField(max_length=45, unique=True)
     description = models.CharField(max_length=255, blank=True, null=True)
     date = models.DateTimeField(auto_now_add=True)
 
