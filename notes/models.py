@@ -8,6 +8,9 @@ class Tag(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        ordering = ('title',)
+
 class Note(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.DO_NOTHING)
     tags = models.ManyToManyField(Tag, related_name='notes')
