@@ -13,7 +13,7 @@ class TagAdmin(admin.ModelAdmin):
 
 class NoteAdmin(admin.ModelAdmin):
     inlines = [TagInline]
-    list_display = ('title', 'hits', 'user')
+    list_display = ('title', 'hits', 'date')
     list_filter = ['tags', 'date']
     search_fields = ['title', 'content']
 
