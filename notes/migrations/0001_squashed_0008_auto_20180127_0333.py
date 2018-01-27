@@ -7,8 +7,6 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    replaces = [('notes', '0001_squashed_0002_auto_20180126_0448'), ('notes', '0002_post'), ('notes', '0003_posttag'), ('notes', '0004_auto_20180126_2351'), ('notes', '0005_auto_20180127_0237'), ('notes', '0006_auto_20180127_0321'), ('notes', '0007_auto_20180127_0329'), ('notes', '0008_auto_20180127_0333')]
-
     initial = True
 
     dependencies = [
