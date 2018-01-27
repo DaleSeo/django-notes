@@ -8,11 +8,13 @@ class TagInline(admin.TabularInline):
 class TagAdmin(admin.ModelAdmin):
     inlines = [TagInline]
     exclude = ('notes',)
+    list_display = ('title', 'description', 'date')
+    search_fields = ['title', 'description']
 
 class NoteAdmin(admin.ModelAdmin):
     inlines = [TagInline]
-    list_display = ('title', 'date', 'user')
-    list_filter = ['date', 'tags']
+    list_display = ('title', 'hits', 'user')
+    list_filter = ['tags', 'date']
     search_fields = ['title', 'content']
 
 admin.site.register(Note, NoteAdmin)
