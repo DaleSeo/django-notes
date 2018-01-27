@@ -1,16 +1,16 @@
 from django.db import models
 
-class Note(models.Model):
-    user = models.ForeignKey('auth.User', on_delete=models.DO_NOTHING)
-    title = models.CharField(max_length=255)
-    memo = models.TextField(blank=True, null=True)
+class Tag(models.Model):
+    title = models.CharField(max_length=45)
+    description = models.CharField(max_length=255)
     date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.title
 
-class Post(models.Model):
+class Note(models.Model):
     user = models.ForeignKey('auth.User', on_delete=models.DO_NOTHING)
+    tags = models.ManyToManyField(Tag, related_name='notes')
     date = models.DateTimeField(auto_now_add=True)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True, null=True)
@@ -21,10 +21,3 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
-
-class PostTag(models.Model):
-    post = models.ForeignKey(Post, related_name='tags', on_delete=models.CASCADE)
-    tag = models.CharField(max_length=45)
-
-    def __str__(self):
-        return self.tag
